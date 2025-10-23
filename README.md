@@ -40,24 +40,24 @@ Fonctionnalités implémentées :
 - Calcul de distance géographique simplifiée entre deux aéroports  
 
 Par exemple :
-
+#
 <img width="608" height="65" alt="image" src="https://github.com/user-attachments/assets/a295344a-80e4-406f-a3d4-6be8039b6399" />
-
+#
 
 D’où viennent ces chiffres ?
 Nombre d'aéroports trouvés : 606
     Correspond au nombre de lignes dans le CSV qui :
         sont de type "large_airport",
         ont des coordonnées valides.
-
+#
 Aéroport le plus proche de Paris
     Le programme crée un point à la position de Paris (lat=48.8566, lon=2.3522),
     puis compare la distance entre ce point et tous les aéroports de la liste.
-
+#
 Distance (approx)
     C'est la norme de distance :
     norme = (Θ2 − Θ1)^2 + ((Φ2 − Φ1) * cos((Θ2 + Θ1)/2))^2
-
+#
 Distance Paris-CDG
     On cherche ensuite l’aéroport CDG dans la liste et on calcule la distance simplifiée entre Paris et CDG 
     CDG est plus loin que Orly du centre de Paris
@@ -68,5 +68,6 @@ On est entrain de mettre en place javafx
 On a dû mettre a jours jdk
 
 cependant stage est manquant
+
 
 
