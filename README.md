@@ -1,10 +1,7 @@
-# CHOUQUET Romain
-# PIEDEULEU Robin
-# ZANGUILO Chris
-
-
+## CHOUQUET Romain PIEDEULEU Robin ZANGUILO Chris
+#
 # Catch me if you can — TP 3D
-
+#
 ## Introduction
 
 L’objectif est de développer une **application de visualisation 3D du trafic aérien** à l’aide de **JavaFX** et d’une **sphère texturée représentant la Terre**.
@@ -74,3 +71,4 @@ On est entrain de mettre en place javafx
 On a dû mettre a jours jdk
 
 cependant stage est manquant
+
