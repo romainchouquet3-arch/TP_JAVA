@@ -17,7 +17,7 @@ Le projet combine **lecture de fichiers**, **parsing JSON**, **calculs géograph
 
 ---
 
-## 🧩 Structure du projet
+## Structure du projet
 
 Catch_me/
 ┣ src/
@@ -41,11 +41,8 @@ Fonctionnalités implémentées :
 
 Par exemple :
 
-Nombre d'aéroports trouvés : 606
-Aéroport le plus proche de Paris : Aeroport[iata=ORY, name=Paris-Orly Airport, country=FR, lat=48,723333, lon=2,379444]
-Distance (approx) : 6.7322204235215755E-6
-CDG : Aeroport[iata=CDG, name=Charles de Gaulle International Airport, country=FR, lat=49,012798, lon=2,550000]
-Distance Paris-CDG : 0.0876713951059423
+<img width="608" height="65" alt="image" src="https://github.com/user-attachments/assets/a295344a-80e4-406f-a3d4-6be8039b6399" />
+
 
 D’où viennent ces chiffres ?
 Nombre d'aéroports trouvés : 606
@@ -71,4 +68,5 @@ On est entrain de mettre en place javafx
 On a dû mettre a jours jdk
 
 cependant stage est manquant
+
 
