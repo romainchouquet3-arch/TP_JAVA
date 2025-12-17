@@ -147,6 +147,54 @@ Après plusieurs test pour ajuster les positions et avoir craqué et laissé vsc
 
 <img width="871" height="699" alt="image" src="https://github.com/user-attachments/assets/fcc102dc-24bd-488e-841b-ad28b1d930f3" />
 
+On a alors :
+
+1. Aeroport.java :
+Cette classe modélise un aéroport physique avec quatre informations : son nom, son code IATA (ex: "CDG"), sa longitude et sa latitude.
+
+Fonction clé : calculDistance(Aeroport a) qui utilise une formule mathématique (géométrie sphérique) pour calculer la distance entre cet aéroport et un autre.
+
+2. World.java 
+C'est le gestionnaire des données géographiques (La base de données). Au démarrage, il lit le fichier CSV (airport-codes_no_comma.csv), filtre pour ne garder que les grands aéroports (large_airport) et crée une liste d'objets Aeroport.
+
+Fonctions clés :
+
+    findNearestAirport(...) : Trouve l'aéroport le plus proche d'un point géographique (utilisé quand vous cliquez sur la Terre).
+
+    findByCode(...) : Retrouve un aéroport grâce à son code IATA (ex: cherche "JFK" et renvoie l'objet correspondant).
+
+3. Earth.java
+Cette classe gère tout l'affichage graphique via JavaFX 3D. Elle crée une sphère, y applique la texture de la Terre (earth.png) et gère la caméra.
+Elle convertit les coordonnées GPS (Latitude/Longitude) en coordonnées 3D (X, Y, Z) pour placer les petites sphères rouges (aéroport sélectionné) et jaunes (destinations) au bon endroit sur le globe.
+
+4. JsonFlight.java (Le décodeur)
+C'est un analyseur manuel de texte (parser). Quand l'API renvoie des informations sur les vols au format brut (JSON), cette classe découpe ce texte pour en extraire uniquement les codes IATA des aéroports de départ.
+
+5. Interface.java
+C'est la classe principale (Main) qui lance l'application et relie tout le monde :
+
+Elle crée la fenêtre et la scène 3D.
+
+Elle lit la souris :
+
+Clic droit : Fait tourner la Terre.
+
+Clic gauche : Identifie l'endroit cliqué, demande à World l'aéroport le plus proche, puis contacte l'API Internet.
+
+Elle gère la connexion API : Elle envoie la requête à aviationstack.com, reçoit la réponse, la passe à JsonFlight, puis demande à Earth d'afficher les points jaunes correspondants.
+
+6. Flight.java (Structure de données)
+C'est une classe simple destinée à stocker les détails complets d'un vol (compagnie, heures de départ/arrivée, etc.).Dans l'état actuel du code, cette classe n'est plus utilisée car le programme se contente principalement d'afficher les codes IATA sur la carte sans détailler les horaires précis.
+
+On a eu plusieur problèmes encontrés :
+
+1. L'erreur "JavaFX runtime components are missing"
+Le problème : Le programme refusait de se lancer car, depuis Java 11, JavaFX ne fait plus partie du kit de développement standard (JDK). La Machine Virtuelle Java (JVM) ne savait pas où chercher les bibliothèques graphiques au démarrage.Nous avons configuré les VM Options dans IntelliJ pour indiquer explicitement le chemin vers le dossier lib contenant les fichiers .jar de JavaFX.
+
+2. Décalage 3D (Géographie)
+Les aéroports s'affichaient bien sur la sphère, mais au mauvais endroit (ex: l'Europe était dans l'Océan Atlantique). Cela est dû au fait que l'image earth.png ne commence pas exactement à la longitude 0 (Greenwich) par rapport aux calculs trigonométriques.
+
+
 
 
 
