@@ -142,6 +142,11 @@ J'ai essayé d'ajouter les aéroport du csvs
 ###
 <img width="323" height="293" alt="image" src="https://github.com/user-attachments/assets/7aa4f8b6-6a5d-4f7d-b2d4-e6c66bf2d2db" />
 
+Après plusieurs test pour ajuster les positions et avoir craqué et laissé vscode pour IntelliJ IDEA on a finis par afficher les aeroports proches du point rouge
+
+
+<img width="871" height="699" alt="image" src="https://github.com/user-attachments/assets/fcc102dc-24bd-488e-841b-ad28b1d930f3" />
+
 
 
 
